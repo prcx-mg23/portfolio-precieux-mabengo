@@ -1,11 +1,11 @@
 /* 
-   Configuration EmailJS pour le formulaire
+   emailjs.config.js — Configuration EmailJS pour le formulaire
 
 */
 
-const EMAILJS_PUBLIC_KEY  = 'PUBLIC_KEY';  
-const EMAILJS_SERVICE_ID  = 'SERVICE_ID';   
-const EMAILJS_TEMPLATE_ID = 'TEMPLATE_ID';  
+const EMAILJS_PUBLIC_KEY  = 'x4fUqAnoKtLxJrkcA';  
+const EMAILJS_SERVICE_ID  = 'service_qrvnbgr';   
+const EMAILJS_TEMPLATE_ID = 'template_kav4st2';  
 
 // Initialisation EmailJS
 emailjs.init(EMAILJS_PUBLIC_KEY);
