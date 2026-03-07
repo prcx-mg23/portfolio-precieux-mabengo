@@ -11,47 +11,42 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Inject EmailJS config
-        env:
-          PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
-          SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
-          TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
         run: |
-          mkdir -p src/js
-          {
-            echo "const EMAILJS_PUBLIC_KEY  = '${PUBLIC_KEY}';"
-            echo "const EMAILJS_SERVICE_ID  = '${SERVICE_ID}';"
-            echo "const EMAILJS_TEMPLATE_ID = '${TEMPLATE_ID}';"
-            echo ""
-            echo "emailjs.init(EMAILJS_PUBLIC_KEY);"
-            echo ""
-            echo "function sendEmail() {"
-            echo "  const status = document.getElementById('form-status');"
-            echo "  const params = {"
-            echo "    from_name: document.getElementById('from_name').value,"
-            echo "    reply_to:  document.getElementById('reply_to').value,"
-            echo "    subject:   document.getElementById('subject').value,"
-            echo "    message:   document.getElementById('message').value,"
-            echo "  };"
-            echo "  if (!params.from_name || !params.reply_to || !params.subject || !params.message) {"
-            echo "    status.textContent = '> Erreur : veuillez remplir tous les champs.';"
-            echo "    status.className = 'form-status error';"
-            echo "    return;"
-            echo "  }"
-            echo "  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)"
-            echo "    .then(() => {"
-            echo "      status.textContent = '> Message envoyé avec succès.';"
-            echo "      status.className = 'form-status success';"
-            echo "      document.getElementById('from_name').value = '';"
-            echo "      document.getElementById('reply_to').value  = '';"
-            echo "      document.getElementById('subject').value   = '';"
-            echo "      document.getElementById('message').value   = '';"
-            echo "    })"
-            echo "    .catch((err) => {"
-            echo "      status.textContent = \"> Erreur : \${err.text || 'Vérifiez vos clés.'}\";"
-            echo "      status.className = 'form-status error';"
-            echo "    });"
-            echo "}"
-          } > src/js/emailjs.config.js
+          cat > src/js/emailjs.config.js << 'EOF'
+const EMAILJS_PUBLIC_KEY  = '${{ secrets.EMAILJS_PUBLIC_KEY }}';
+const EMAILJS_SERVICE_ID  = '${{ secrets.EMAILJS_SERVICE_ID }}';
+const EMAILJS_TEMPLATE_ID = '${{ secrets.EMAILJS_TEMPLATE_ID }}';
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
+
+function sendEmail() {
+  const status = document.getElementById('form-status');
+  const params = {
+    from_name: document.getElementById('from_name').value,
+    reply_to:  document.getElementById('reply_to').value,
+    subject:   document.getElementById('subject').value,
+    message:   document.getElementById('message').value,
+  };
+  if (!params.from_name || !params.reply_to || !params.subject || !params.message) {
+    status.textContent = '> Erreur : veuillez remplir tous les champs.';
+    status.className = 'form-status error';
+    return;
+  }
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+    .then(() => {
+      status.textContent = '> Message envoyé avec succès.';
+      status.className = 'form-status success';
+      document.getElementById('from_name').value = '';
+      document.getElementById('reply_to').value  = '';
+      document.getElementById('subject').value   = '';
+      document.getElementById('message').value   = '';
+    })
+    .catch((err) => {
+      status.textContent = `> Erreur : ${err.text || 'Vérifiez vos clés.'}`;
+      status.className = 'form-status error';
+    });
+}
+EOF
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
