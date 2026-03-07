@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Précieux Mabengo | Cybersécurité & Réseaux</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+<canvas id="matrix-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span>&gt;_</span> précieux.mabengo
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Accueil</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#experience">Expériences</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#hero" class="mobile-link">Accueil</a>
+    <a href="#about" class="mobile-link">À propos</a>
+    <a href="#skills" class="mobile-link">Compétences</a>
+    <a href="#experience" class="mobile-link">Expériences</a>
+    <a href="#projects" class="mobile-link">Projets</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-badge">// DISPONIBLE POUR UN STAGE OU UNE ALTERNANCE</div>
+
+  <h1 class="hero-name">
+    <span class="first">Précieux </span>
+    <span class="last glitch" data-text="MABENGO">MABENGO</span>
+  </h1>
+
+  <p class="hero-title">
+    Étudiant en L3 Informatique
+    <span class="pipe">|</span>
+    Université de Limoges
+  </p>
+
+  <div class="typing-text">
+    <span id="typing-output"></span><span class="typing-cursor"></span>
+  </div>
+
+  <p class="hero-bio">
+    Passionné par la sécurité des infrastructures et les technologies Cloud, je combine une double licence informatique, deux stages en administration systèmes & réseaux et une certification AWS pour construire des solutions robustes et sécurisées.
+  </p>
+
+  <div class="hero-cta">
+    <a href="src/assets/Documents/CV_2026-stage_Gloire Précieux_Mabengo.pdf" download class="btn-primary">Télécharger mon CV</a>
+    <a href="#contact" class="btn-ghost">Me contacter</a>
+  </div>
+
+  <div class="hero-links">
+    <a href="https://github.com/Prcx-mg23" target="_blank" class="hero-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      Prcx-mg23
+    </a>
+    <a href="https://www.root-me.org/prcx_mg23" target="_blank" class="hero-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      RootMe
+    </a>
+    <a href="https://www.linkedin.com/in/gloire-precieux-mabengo-416145263" target="_blank" class="hero-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM8.339 19H5.337V9h3.002v10zM6.837 7.736c-.962 0-1.742-.78-1.742-1.742s.78-1.742 1.742-1.742 1.742.78 1.742 1.742-.78 1.742-1.742 1.742zM19 19h-3.002v-5.605c0-1.336-.027-3.055-1.863-3.055-1.865 0-2.151 1.457-2.151 2.962V19h-3.002V9h2.881v1.367h.041c.402-.762 1.385-1.564 2.85-1.564 3.048 0 3.612 2.007 3.612 4.617V19z"/></svg>
+      LinkedIn
+    </a>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    scrolle
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">// 01. PROFIL</div>
+    <h2 class="section-title">À propos <span class="accent">de moi</span></h2>
+    <div class="section-divider"></div>
+
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <img src="src/assets/images/img-Profil.jpg" alt="Précieux Mabengo">
+        <div class="photo-badge">
+          <div>STATUS: Disponible</div>
+          <div>LOCALISATION: Limoges, FR</div>
+          <div>NIVEAU: L3 → Master 2026</div>
+        </div>
+      </div>
+
+      <div class="about-text reveal reveal-delay-1">
+        <p>Je m'appelle <strong>Gloire Précieux Mabengo</strong>, étudiant en troisième année de Licence Informatique à l'Université de Limoges, préparant mon entrée en Master en septembre 2026.</p>
+        <p>Fort d'une première Licence spécialisée en <strong>sécurité des réseaux et des systèmes</strong>, de deux expériences de stage en administration systèmes & réseaux et d'une <strong>certification AWS Cloud Practitioner</strong>, j'aborde l'informatique avec un regard orienté sécurité et infrastructure.</p>
+        <p>Mon ambition : contribuer à des solutions qui renforcent la résilience des infrastructures et protègent les données critiques des entreprises.</p>
+
+        <div class="about-stats">
+          <div class="stat-box">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Stages</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">4+</span>
+            <span class="stat-label">Projets</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">1</span>
+            <span class="stat-label">Certif. AWS</span>
+          </div>
+        </div>
+
+        <a href="src/assets/Documents/CV_2026-stage_Gloire Précieux_Mabengo.pdf" download class="btn-primary">
+          Télécharger mon CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">// 02. ARSENAL TECHNIQUE</div>
+    <h2 class="section-title">Mes <span class="accent">compétences</span></h2>
+    <div class="section-divider"></div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🛡️</div>
+        <h3>Sécurité</h3>
+        <div class="skill-tags">
+          <span class="tag">XSS / CSRF / SSRF</span>
+          <span class="tag">SQLi</span>
+          <span class="tag">Cryptographie</span>
+          <span class="tag">UFW</span>
+          <span class="tag">Fail2Ban</span>
+          <span class="tag">Nmap</span>
+          <span class="tag">Root-Me</span>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-card-icon">🌐</div>
+        <h3>Réseaux</h3>
+        <div class="skill-tags">
+          <span class="tag">TCP/IP</span>
+          <span class="tag">DHCP / DNS</span>
+          <span class="tag">Routage statique</span>
+          <span class="tag">VLANs</span>
+          <span class="tag">Wireshark</span>
+          <span class="tag">Zabbix</span>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-card-icon">💻</div>
+        <h3>Programmation</h3>
+        <div class="skill-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Java</span>
+          <span class="tag">C++</span>
+          <span class="tag">Bash</span>
+          <span class="tag">PHP</span>
+          <span class="tag">MySQL</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🌍</div>
+        <h3>Web</h3>
+        <div class="skill-tags">
+          <span class="tag">HTML / CSS</span>
+          <span class="tag">TailwindCSS</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">PHP</span>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-card-icon">⚙️</div>
+        <h3>Système & Admin</h3>
+        <div class="skill-tags">
+          <span class="tag">Active Directory</span>
+          <span class="tag">LDAP</span>
+          <span class="tag">GPO</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Apache</span>
+          <span class="tag">GLPI</span>
+        </div>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-card-icon">☁️</div>
+        <h3>Cloud & Virt.</h3>
+        <div class="skill-tags">
+          <span class="tag">AWS IAM</span>
+          <span class="tag">AWS VPC</span>
+          <span class="tag">AWS S3 / EC2</span>
+          <span class="tag">VMware</span>
+          <span class="tag">Kathara</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">// 03. TERRAIN</div>
+    <h2 class="section-title">Expériences <span class="accent">professionnelles</span></h2>
+    <div class="section-divider"></div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">Avril – Juin 2023</div>
+        <div class="timeline-title">Administrateur Systèmes & Réseaux</div>
+        <div class="timeline-company">La Congolaise Des Eaux — République du Congo</div>
+        <ul class="timeline-desc">
+          <li>Support informatique : diagnostic et résolution d'incidents sur postes, réseau et serveurs</li>
+          <li>Documentation des incidents et des procédures internes</li>
+          <li>Administration du réseau local, gestion des VLANs</li>
+          <li>Surveillance des équipements actifs via Zabbix</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">Septembre 2022</div>
+        <div class="timeline-title">Administrateur Systèmes & Réseaux</div>
+        <div class="timeline-company">Ministère de l'Économie et des Finances — République du Congo</div>
+        <ul class="timeline-desc">
+          <li>Déploiement de GLPI sur un parc Windows, configuration des GPO</li>
+          <li>Configuration de serveurs de réplication pour assurer la redondance de service</li>
+          <li>Documentation complète des configurations, procédures et incidents</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-label">// 04. FORMATION</div>
+    <h2 class="section-title">Parcours <span class="accent">académique</span></h2>
+    <div class="section-divider"></div>
+
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-year">Depuis sept. 2024</div>
+        <div class="edu-degree">Licence Informatique</div>
+        <div class="edu-school">Université de Limoges — France</div>
+      </div>
+      <div class="edu-card reveal reveal-delay-1">
+        <div class="edu-year">2023 – 2024</div>
+        <div class="edu-degree">AWS Certified Cloud Practitioner</div>
+        <div class="edu-school">CARIA / Azubi Africa — Congo</div>
+      </div>
+      <div class="edu-card reveal reveal-delay-2">
+        <div class="edu-year">2020 – 2023</div>
+        <div class="edu-degree">Licence Maths-Info — Sécurité des réseaux & systèmes</div>
+        <div class="edu-school">Université Denis Sassou N'Guesso — Congo</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-year">2019 – 2020</div>
+        <div class="edu-degree">Baccalauréat scientifique, série C</div>
+        <div class="edu-school">Lycée Victor Justin Sathoud — Congo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">// 05. RÉALISATIONS</div>
+    <h2 class="section-title">Mes <span class="accent">projets</span></h2>
+    <div class="section-divider"></div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <img src="src/assets/images/img-projet1.png" alt="Réservation sportive" class="project-img">
+        <div class="project-body">
+          <div class="project-num">// 01</div>
+          <div class="project-title">Plateforme web de réservation de séances sportives</div>
+          <p class="project-desc">Application full-stack avec authentification, gestion de comptes utilisateurs, catalogue d'activités sportives et envoi automatique de mails.</p>
+          <div class="project-stack">
+            <span class="tag">HTML</span><span class="tag">Bootstrap</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+          </div>
+          <a href="https://github.com/RiDoX-i/web-project.git" target="_blank" class="project-link">Voir sur GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <img src="src/assets/images/img-projet2.png" alt="Photo editor Java" class="project-img">
+        <div class="project-body">
+          <div class="project-num">// 02</div>
+          <div class="project-title">Application d'édition de photos avec chiffrement</div>
+          <p class="project-desc">Éditeur d'images avec filtres, transformations et module de chiffrement/déchiffrement intégré.</p>
+          <div class="project-stack">
+            <span class="tag">Java</span><span class="tag">JavaFX</span>
+          </div>
+          <a href="https://github.com/prcx-mg23/ImageApp-Bibliotheque.git" target="_blank" class="project-link">Voir sur GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2">
+        <img src="src/assets/images/img-projet3.png" alt="Password manager" class="project-img">
+        <div class="project-body">
+          <div class="project-num">// 03</div>
+          <div class="project-title">OKULT — Gestionnaire de mots de passe CLI</div>
+          <p class="project-desc">Gestionnaire sécurisé en ligne de commande pour générer, stocker et gérer des identifiants avec chiffrement.</p>
+          <div class="project-stack">
+            <span class="tag">Python</span><span class="tag">CLI</span><span class="tag">Cryptographie</span>
+          </div>
+          <a href="https://github.com/prcx-mg23/OKULT-version1-TerminalUI/" target="_blank" class="project-link">Voir sur GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="src/assets/images/img-projet4.jpg" alt="Linux hardening" class="project-img">
+        <div class="project-body">
+          <div class="project-num">// 04</div>
+          <div class="project-title">Hardening d'un serveur Linux Ubuntu</div>
+          <p class="project-desc">Durcissement complet d'une infrastructure Ubuntu Server : SSH sécurisé, pare-feu UFW, HTTPS avec redirection 301 et protection via Fail2Ban.</p>
+          <div class="project-stack">
+            <span class="tag">Ubuntu Server</span><span class="tag">UFW</span><span class="tag">Fail2Ban</span><span class="tag">Nmap</span>
+          </div>
+          <a href="https://github.com/prcx-mg23/Linux-server-hardening-lab" target="_blank" class="project-link">Voir sur GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">// 06. COMMUNICATION</div>
+    <h2 class="section-title">Me <span class="accent">contacter</span></h2>
+    <div class="section-divider"></div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Disponible pour un stage ou une alternance à partir de 2026.</h3>
+
+        <a href="tel:+33627955671" class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.2 3.6a1 1 0 01-.27 1.05l-2.12 2.12a16 16 0 006.36 6.36l2.12-2.12a1 1 0 011.05-.27l3.6 1.2a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Téléphone</div>
+            <div class="contact-value">+33 6 27 95 56 71</div>
+          </div>
+        </a>
+
+        <a href="mailto:mabengoprecieux@gmail.com" class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">mabengoprecieux@gmail.com</div>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/gloire-precieux-mabengo-416145263" target="_blank" class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM8.339 19H5.337V9h3.002v10zM6.837 7.736c-.962 0-1.742-.78-1.742-1.742s.78-1.742 1.742-1.742 1.742.78 1.742 1.742-.78 1.742-1.742 1.742zM19 19h-3.002v-5.605c0-1.336-.027-3.055-1.863-3.055-1.865 0-2.151 1.457-2.151 2.962V19h-3.002V9h2.881v1.367h.041c.402-.762 1.385-1.564 2.85-1.564 3.048 0 3.612 2.007 3.612 4.617V19z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">Mabengo Gloire Précieux</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="from_name">Nom</label>
+              <input type="text" id="from_name" name="from_name" class="form-input" placeholder="Jean Dupont" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reply_to">Email</label>
+              <input type="email" id="reply_to" name="reply_to" class="form-input" placeholder="jean@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subject">Objet</label>
+            <input type="text" id="subject" name="subject" class="form-input" placeholder="Proposition de stage / alternance" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea id="message" name="message" class="form-textarea" placeholder="Décrivez votre opportunité ou votre demande..." required></textarea>
+          </div>
+          <div id="form-status" class="form-status"></div>
+          <button type="button" onclick="sendEmail()" class="btn-primary" style="align-self:flex-start">
+            Envoyer le message
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>&gt;_</span> Gloire Précieux Mabengo — 2025 &nbsp;|&nbsp; Étudiant en Informatique &nbsp;|&nbsp; Limoges, France
+</footer>
+
+<!-- Scripts  -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="src/JavaScript/emailjs.config.js"></script>
+<script src="src/JavaScript/main.js"></script>
+
+</body>
+</html>
