@@ -39,7 +39,7 @@ const phrases = [
   'Cybersécurité & Réseaux',
   'Administration systèmes',
   'Cloud AWS | Infrastructure',
-  "En quête d'un stage 2026",
+  "En quête d'un stage ou une alternance 2026",
 ];
 let pIdx = 0, cIdx = 0, deleting = false;
 const output = document.getElementById('typing-output');
