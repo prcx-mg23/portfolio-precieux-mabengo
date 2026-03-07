@@ -1,6 +1,6 @@
-/* ==============================================
+/* 
    main.js — Animations & interactions portfolio
-   ============================================== */
+  */
 
 /* ---- MATRIX CANVAS ---- */
 const canvas = document.getElementById('matrix-canvas');
