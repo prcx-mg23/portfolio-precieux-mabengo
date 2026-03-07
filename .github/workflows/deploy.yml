@@ -26,7 +26,7 @@ jobs:
           SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
           TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
         run: |
-          mkdir -p src/js
+          mkdir -p src/JavaScript
           {
             echo "const EMAILJS_PUBLIC_KEY  = '${PUBLIC_KEY}';"
             echo "const EMAILJS_SERVICE_ID  = '${SERVICE_ID}';"
@@ -61,7 +61,7 @@ jobs:
             echo "      status.className = 'form-status error';"
             echo "    });"
             echo "}"
-          } > src/js/emailjs.config.js
+          } > src/JavaScript/emailjs.config.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
