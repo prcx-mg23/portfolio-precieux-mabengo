@@ -26,6 +26,9 @@ jobs:
           TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
         run: python3 inject_emailjs.py
 
+      - name: Debug - affiche le fichier généré
+        run: cat src/JavaScript/emailjs.config.js
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
