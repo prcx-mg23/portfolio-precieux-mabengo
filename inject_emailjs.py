@@ -1,8 +1,8 @@
 import os
 
-pk  = os.environ["PUBLIC_KEY"]
-sid = os.environ["SERVICE_ID"]
-tid = os.environ["TEMPLATE_ID"]
+pk  = os.environ["PUBLIC_KEY"].strip()
+sid = os.environ["SERVICE_ID"].strip()
+tid = os.environ["TEMPLATE_ID"].strip()
 
 js = (
     "const EMAILJS_PUBLIC_KEY  = '" + pk  + "';\n"
@@ -40,7 +40,6 @@ js = (
     "}\n"
 )
 
-import os
 os.makedirs("src/JavaScript", exist_ok=True)
 with open("src/JavaScript/emailjs.config.js", "w") as f:
     f.write(js)
