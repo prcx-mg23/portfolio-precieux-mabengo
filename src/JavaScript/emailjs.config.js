@@ -3,9 +3,9 @@
 
 */
 
-const EMAILJS_PUBLIC_KEY  = 'clef_publique_emailjs'; 
-const EMAILJS_SERVICE_ID  = 'service_xxx';          
-const EMAILJS_TEMPLATE_ID = 'template_xxx';      
+const EMAILJS_PUBLIC_KEY  = 'x4fUqAnoKtLxJrkcA'; 
+const EMAILJS_SERVICE_ID  = 'service_qrvnbgr';          
+const EMAILJS_TEMPLATE_ID = 'template_kav4st2';      
 
 emailjs.init(EMAILJS_PUBLIC_KEY);
 
